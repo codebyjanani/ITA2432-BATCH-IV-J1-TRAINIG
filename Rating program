@@ -1,0 +1,49 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int count = 5;
+        int sum = 0;
+        System.out.println("Track your order");
+        for (int i = 1; i <= count; i++) {
+            int rating;
+            do {
+                System.out.print("Enter rating " + i + " (1 to 5): ");
+                rating = sc.nextInt();
+                if (rating < 1 || rating > 5) {
+                    System.out.println("Warning: Invalid rating! Please enter a value between 1 and 5.");
+                }
+            } while (rating < 1 || rating > 5);
+            sum += rating;
+        }
+        double average = (double) sum / count;
+        System.out.println("\nAverage Rating = " + average);
+       if(average>=3.8 && average<5){
+           System.out.println("valid offer");
+           System.out.println("Track your order");
+           int ch;
+           System.out.println("Enter your choice: ");
+           ch = sc.nextInt();
+           if(ch == 1) {
+                  System.out.println("Prepare your order");
+              }
+              else if(ch == 2) {
+                  System.out.println("Order is ready");
+              }
+              else if(ch == 3) {
+                  System.out.println("Out for delivery");
+              }
+              else if(ch == 4) {
+                  System.out.println("Reached your Home");
+              }
+              else if(ch == 5) {
+                  System.out.println("Delivered");
+              }
+              else {
+                  System.out.println("Enter the number and track your order");
+              }
+       } else {
+           System.out.println("invalid try again");
+       }
+    }
+}
